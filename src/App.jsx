@@ -5,8 +5,10 @@ import './App.css'
 // React Router DOM
 import { Routes, Route } from 'react-router-dom'
 
-// Pages
+// Routes
 import HomePage from './pages/HomePage'
+import SignUpPage from './pages/SignUpPage'
+import SignInPage from './pages/SigninPage'
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signin" element={<SignInPage />} />
       </Routes>
     </div>
   )
