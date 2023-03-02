@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 // React Router DOM
 import { Link, useNavigate } from 'react-router-dom'
@@ -7,51 +7,40 @@ import { Link, useNavigate } from 'react-router-dom'
 // Services
 import authService from '../../services/auth.service';
 
+// Context
+import { AuthContext } from '../../context/auth.context';
 
-const SignUpForm = () => {
-  const [username, setUsername] = useState("");
+const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
-  const handleUsername = (e) => setUsername(e.target.value);
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const handleSignupSubmit = (e) => {
+  const handleSignInSubmit = (e) => {
     e.preventDefault();
-    console.log("Button Clicked");
 
-    const requestBody = { username, email, password };
+    const requestBody = { email, password };
 
-    authService.signup(requestBody)
+    authService.signin(requestBody)
       .then((response) => {
-        navigate("/signin");
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
+        const errorDescription = error.response.data.description;
         setErrorMessage(errorDescription);
       })
   }
 
   return (
-    <form onSubmit={handleSignupSubmit}>
-      <div className="input-group mb-3">
-      <span className="input-group-text">@</span>
-        <div className="form-floating">
-          <input 
-            type="text"
-            className="form-control"
-            name="username"
-            placeholder="Username"
-            onChange={handleUsername}
-          />
-          <label htmlFor="username">Username</label>
-        </div>
-      </div>
-
+    <form onSubmit={handleSignInSubmit}>
       <div className='form-floating mb-3'>
         <input
           type="email"
@@ -76,14 +65,14 @@ const SignUpForm = () => {
       </div>
 
       <div className="d-grid">
-        <button className="btn btn-primary btn-lg" type="submit">Sign up</button>
+        <button className="btn btn-primary btn-lg" type="submit">Sign in</button>
       </div>
 
       {errorMessage && <div className="alert alert-danger" role="alert" >{errorMessage}</div>}
 
-      <p>Already have an account? <span><Link to="/signin">Sign in</Link></span></p>
+      <p>Don't have an account yet? <span><Link to="/signup">Sign up</Link></span></p>
     </form>
   )
 }
 
-export default SignUpForm
+export default SignInForm

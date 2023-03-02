@@ -1,8 +1,15 @@
 import React from 'react'
 
+// Components
+import SignInForm from '../components/SignInForm'
+
 const SignInPage = () => {
   return (
-    <div>SignInPage</div>
+    <div>
+      <h1>Sign in</h1>
+
+      <SignInForm />
+    </div>
   )
 }
 
