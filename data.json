@@ -1,0 +1,31 @@
+{
+  "name": "Chypre Type",
+  "version": "0.3.1",
+  "isPrivate": false,
+  "type": "Fragrance",
+  "creator": "6400c6dfb7d333edde543612",
+  "stage": "Formulation",
+  "tagline": "An 80s style chypre with notes of Cardamom",
+  "description": "Travel back in time to the opulent 80s with this chypre fragrance, featuring a special note of cardamom. Top notes of bergamot and mandarin lead to a heart of jasmine, rose, and patchouli. The base notes of oakmoss, musk, and amber provide a warm finish. The addition of cardamom adds a unique twist to this classic scent. Perfect for those who want to make a statement and leave a lasting impression.",
+  "olfactiveFamily": "Chypre",
+  "concentration": 0.18,
+  "ingredients": [
+    {
+      "materialId": "63ff76782657a670ea8aa45e",
+      "amount": {
+        "grams": 4.52
+      }
+    },
+    {
+      "materialId": "63ff76782657a670ea8aa45e",
+      "dilution": {
+        "concentration": 0.1,
+        "solventId": "640200a13b1fcc31aafc96da"
+      },
+      "amount": {
+        "grams": 2.00
+      }
+    }
+  ],
+  "likedBy": ["6400c662b7d333edde54360e"]
+}
