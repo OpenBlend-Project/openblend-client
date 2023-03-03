@@ -25,6 +25,5 @@ dist-ssr
 
 # dotenv
 .env
-
 # data
 data.json
