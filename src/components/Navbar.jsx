@@ -22,7 +22,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to={"/"}>Dashboard</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to={"/formulae"}>My Formulae</NavLink>
+              <NavLink className="nav-link" to={"/formulas"}>My Formulas</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={"/collections"}>My Collections</NavLink>
