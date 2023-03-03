@@ -5,8 +5,7 @@ import logo from '../assets/openblend_pri_blk.svg';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  // Add 'active' class to active Link in Navbar
-  const checkLinkState = (isActive) => isActive ? "active" : undefined;
+  
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
