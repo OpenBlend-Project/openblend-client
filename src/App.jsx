@@ -10,10 +10,14 @@ import HomePage from './pages/HomePage'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SigninPage'
 
+//Components
+import Navbar from './components/Navbar'
+
 function App() {
 
   return (
-    <div className="App">
+    <div className="App container-fluid bg-light" style={{ "minHeight": "100vh"}}>
+      <Navbar />
       
       <Routes>
         <Route path="/" element={<HomePage />} />
