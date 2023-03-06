@@ -1,6 +1,6 @@
-import HttpService from './http.service';
+import PrivateService from './private.service';
 
-class AuthService extends HttpService {
+class AuthService extends PrivateService {
   constructor() {
     super();
   }
