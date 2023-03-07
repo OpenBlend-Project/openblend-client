@@ -10,16 +10,16 @@ import { Link } from 'react-router-dom';
 // Services
 import formulasService from '../../services/formulas.service';
 
-const FormulaTableRow = ({ ingredient, index, array, formulaId }) => {
+const FormulaTableRow = ({ ingredient, index, array, formulaId, reloadFormula }) => {
   const [grams, setGrams] = useState(ingredient.amount.grams);
 
+  const ingredientId = ingredient._id
 
   const handleGramsChange = (e) => {
     setGrams(e.target.value);
   };
 
   const handleGramsEdit = (e) => {
-    const ingredientId = ingredient._id;
     const requestBody = { grams };
 
     formulasService.updateFormulaIngredient(formulaId, ingredientId, requestBody)
@@ -27,6 +27,11 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId }) => {
       .catch(error => console.log(error))
 
     console.log(formulaId, ingredientId, requestBody);
+  }
+
+  const handleDelete = () => {
+    formulasService.deleteFormulaIngredient(formulaId, ingredientId)
+      .then(response => reloadFormula());
   }
 
   return (
@@ -58,7 +63,7 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId }) => {
         <input type="text" inputMode="numeric" className="form-control form-control-sm text-end" id="exampleFormControlInput1" value={grams} onChange={handleGramsChange} onBlur={handleGramsEdit} />
       </div>
       <div className="col-1 text-end">
-        <Link to="#"><img className="opacity-25" src={trashIcon} alt="delete" style={{ width: "18px", height: "18px" }}/></Link>
+       <img className="opacity-25" src={trashIcon} alt="delete" style={{ width: "18px", height: "18px" }} onClick={handleDelete} />
       </div>
     </div>
   )

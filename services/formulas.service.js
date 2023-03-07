@@ -20,6 +20,11 @@ class FormulasService extends PrivateService {
     return this.api.get(`/api/formulas/${id}`);
   }
 
+  // PUT /api/formulas/:id - update formula
+  updateFormula = (formulaId, requestBody) => {
+    return this.api.put(`api/formulas/${formulaId}`, requestBody);
+  }
+
   // PUT /api/formulas/:id
   updateFormulaIngredient = (formulaId, ingredientId, requestBody) => {
     return this.api.put(`/api/formulas/${formulaId}/ingredients/${ingredientId}`, requestBody);
@@ -30,8 +35,10 @@ class FormulasService extends PrivateService {
     return this.api.delete(`/api/formulas/${id}`);
   }
   
-  // Process formula data for table
-
+  // DELETE /api/formulas/:formulaId/ingredient/:ingredientId
+  deleteFormulaIngredient = (formulaId, ingredientId) => {
+    return this.api.delete(`/api/formulas/${formulaId}/ingredients/${ingredientId}`);
+  }
 }
 
 const formulasService = new FormulasService();
