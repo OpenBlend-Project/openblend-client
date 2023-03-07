@@ -8,11 +8,11 @@ import { useParams } from 'react-router-dom'
 import formulasService from '../../services/formulas.service';
 
 // Components
-import FormulaTable2 from '../components/FormulaTable2'
+import FormulaTable from '../components/FormulaTable'
 import MaterialsSearchBar from '../components/MaterialsSearchBar';
 
 const FormulaPage = () => {
-  const[data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
   const { formulaId } = useParams();
 
@@ -37,7 +37,7 @@ const FormulaPage = () => {
       <div className='col-12 col-sm-10 mt-5'>
         <h2>{data.name}</h2>
         <MaterialsSearchBar formulaId={formulaId} reloadFormula={reloadFormula} />
-        {data && <FormulaTable2 data={data} reloadFormula={reloadFormula}/>}
+        {data && <FormulaTable data={data} reloadFormula={reloadFormula}/>}
       </div>
       <div className='col'></div>
     </div>
