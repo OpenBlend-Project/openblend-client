@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-class HttpService {
+class PrivateService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: import.meta.env.VITE_APP_PRIVATE_SERVER_URL || "http://localhost:5005"
     }),
     
     // Automatically set JWT token in the headers for every request
@@ -20,4 +20,4 @@ class HttpService {
   }
 }
 
-export default HttpService;
+export default PrivateService;

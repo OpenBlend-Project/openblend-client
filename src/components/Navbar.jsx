@@ -1,11 +1,14 @@
 import React from 'react'
 import logo from '../assets/openblend_pri_blk.svg';
 
+import { useEffect } from 'react';
+
+import formulasService from '../../services/formulas.service';
+
 // React Router DOM, React Router Bootstrap
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
