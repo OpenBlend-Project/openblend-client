@@ -4,11 +4,11 @@ import { useState } from 'react'
 // Components
 import FormulaTableRow from './FormulaTableRow';
 
-const FormulaTable2 = ({ data }) => {
+const FormulaTable2 = ({ data, reloadFormula }) => {
   console.log(data);
 
   return (
-    <div className="container-fluid rounded border border-secondary border-opacity-25 overflow-hidden mt-4">
+    <div className="container-fluid rounded border border-secondary border-opacity-25 overflow-hidden mt-2">
       <div className="row row-cols-8 bg-secondary bg-opacity-25 p-2" style={{ fontSize: "12px" }}>
         <div className="col-1">
           <span>Pos.</span>
@@ -41,6 +41,7 @@ const FormulaTable2 = ({ data }) => {
             index={index}
             array={array}
             formulaId={data._id}
+            reloadFormula={reloadFormula}
           />
         )
       })}

@@ -9,6 +9,7 @@ import formulasService from '../../services/formulas.service';
 
 // Components
 import FormulaTable2 from '../components/FormulaTable2'
+import MaterialsSearchBar from '../components/MaterialsSearchBar';
 
 const FormulaPage = () => {
   const[data, setData] = useState(null);
@@ -16,11 +17,15 @@ const FormulaPage = () => {
   const { formulaId } = useParams();
 
   useEffect(() => {
+    reloadFormula();
+  }, [])
+
+  const reloadFormula = () => {
     formulasService.getFormula(formulaId)
       .then(response => {
         setData(response.data);
       })
-  }, [])
+  }
 
   if (!data) {
     return <span>Loading...</span>
@@ -31,7 +36,8 @@ const FormulaPage = () => {
       <div className='col'></div>
       <div className='col-12 col-sm-10 mt-5'>
         <h2>{data.name}</h2>
-        {data && <FormulaTable2 data={data} />}
+        <MaterialsSearchBar formulaId={formulaId} reloadFormula={reloadFormula} />
+        {data && <FormulaTable2 data={data} reloadFormula={reloadFormula}/>}
       </div>
       <div className='col'></div>
     </div>
