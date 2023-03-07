@@ -21,14 +21,17 @@ class FormulasService extends PrivateService {
   }
 
   // PUT /api/formulas/:id
-  updateFormula = (id, requestBody) => {
-    return this.api.put(`/api/formulas/${id}`, requestBody);
+  updateFormulaIngredient = (formulaId, ingredientId, requestBody) => {
+    return this.api.put(`/api/formulas/${formulaId}/ingredients/${ingredientId}`, requestBody);
   }
 
   // DELETE /api/formulas/:id
   deleteFormula = (id) => {
     return this.api.delete(`/api/formulas/${id}`);
-  } 
+  }
+  
+  // Process formula data for table
+
 }
 
 const formulasService = new FormulasService();

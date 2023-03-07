@@ -10,11 +10,6 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
-  useEffect(() => {
-    formulasService.getAllFormulas();
-  }, [])
-  
-
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid ps-3 pe-1 px-sm-5 py-2 py-sm-3">
