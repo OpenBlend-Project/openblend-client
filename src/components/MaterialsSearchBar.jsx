@@ -45,19 +45,20 @@ const MaterialsSearchBar = (props) => {
           .catch(error => console.log(error));
       })
     setAutocomplete([]);
+    setSearchTerm("");
   }
 
   return (
     <form className='row mt-4 g-2' onSubmit={handleSubmit}>
       <div className="col-12">
         <div className="position-relative">
-          <input type="search" className="form-control" id="search" placeholder="Search ... " onChange={(e) => setSearchTerm(e.target.value)} />
+          <input type="search" className="form-control form-control-lg shadow-sm" id="search" placeholder="Search ... " onChange={(e) => setSearchTerm(e.target.value)} />
           {autocomplete.length > 0 && (
             <ul className="list-group position-absolute w-100 mt-1 shadow-sm z-3">
               {autocomplete.map(item => {
                 return (
                   <li key={item._id} className="list-group-item list-group-item-action" onClick={() => handleSelect(item._id)}>
-                    <h6 className='mb-0'>{item.name.common}</h6>
+                    <h6 className='mb-0'>{item.name.common} <span class="text-muted fst-italic fw-normal">{item.name.botanical && item.name.botanical}</span></h6>
                     <small>{item.identifier.cas}</small>
                   </li>
                 )

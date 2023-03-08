@@ -15,7 +15,7 @@ const FormulaTable = ({ data, reloadFormula }) => {
   console.log(totalWeight);
 
   return (
-    <div className="container-fluid rounded border border-secondary border-opacity-25 overflow-hidden mt-2">
+    <div className="container-fluid rounded border border-secondary border-opacity-25 overflow-hidden mt-3 shadow-sm">
       <div className="row row-cols-8 bg-secondary bg-opacity-25 p-2" style={{ fontSize: "12px" }}>
         <div className="col-1">
           <span>Pos.</span>
