@@ -13,6 +13,9 @@ import FormulaPage from './pages/FormulaPage'
 
 //Components
 import Navbar from './components/Navbar'
+import IsPrivate from './hoc/IsPrivate'
+import IsAnon from './hoc/IsAnon'
+import CollectionsPage from './pages/CollectionsPage'
 
 function App() {
 
@@ -23,10 +26,10 @@ function App() {
       <div className="countainer-fluid px-3 px-sm-5">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/formulas/:formulaId" element={<FormulaPage />} />
+          <Route path="/signup" element={<IsAnon><SignUpPage /></IsAnon>} />
+          <Route path="/signin" element={<IsAnon><SignInPage /></IsAnon>} />
+          <Route path="/collections" element={<IsPrivate><CollectionsPage /></IsPrivate>} />
+          <Route path="/formulas/:formulaId" element={<IsPrivate><FormulaPage /></IsPrivate>} />
         </Routes>
       </div>
     </div>

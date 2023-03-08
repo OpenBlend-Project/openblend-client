@@ -30,9 +30,11 @@ const FormulaPage = () => {
 
   if (!data) {
     return (
-      <div className="row justify-items-center align-items-center">
-        <div className="col mx-auto text-center">Loading...</div>
-      </div>  
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
     )
   }
 

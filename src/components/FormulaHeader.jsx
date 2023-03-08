@@ -4,7 +4,7 @@ import FormulaHeaderCard from './FormulaHeaderCard'
 const FormulaHeader = ({ data }) => {
 
   return (
-    <div className='row row-cols-1 row-cols-md-4 mt-4'>
+    <div className='row row-cols-1 row-cols-lg-4 mt-4'>
       <div className="col">
         <FormulaHeaderCard descriptor={"Olfactive Family"} data={data.olfactiveFamily}/>
       </div>
