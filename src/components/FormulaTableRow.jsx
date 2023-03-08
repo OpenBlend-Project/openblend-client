@@ -41,7 +41,12 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId, reloadFormula, t
 
   const handleDelete = () => {
     formulasService.deleteFormulaIngredient(formulaId, ingredientId)
-      .then(response => reloadFormula());
+      .then(response => {
+        console.log(response);
+        updateTotalWeight(-grams);
+        reloadFormula()
+      })
+      .catch(error => console.log(error))
   }
 
   return (
@@ -67,13 +72,13 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId, reloadFormula, t
         <span>{(ingredient.dilution && ingredient.dilution.concentration < 1 && ingredient.dilution.solvent) && ingredient.dilution.solvent.name.common}</span>
       </div>
       <div className="col-1 text-end">
-        <span>{percent && percent.toFixed(2)} <span className="opacity-25">%</span></span>
+        <span>{percent && percent.toFixed(2)} <span style={{ color: "#cbd5e1" }}>%</span></span>
       </div>
       <div className="col-1 text-end">
         <input type="text" inputMode="numeric" className="form-control form-control-sm text-end" id="exampleFormControlInput1" value={grams} onChange={handleGramsChange} onBlur={handleGramsEdit} />
       </div>
       <div className="col-1 text-end">
-       <img className="opacity-25" src={trashIcon} alt="delete" style={{ width: "18px", height: "18px" }} onClick={handleDelete} />
+       <img className="" src={trashIcon} alt="delete" style={{ width: "18px", height: "18px", cursor: "pointer" }} onClick={handleDelete} />
       </div>
     </div>
   )
