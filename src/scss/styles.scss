@@ -1,1 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+
+.text-muted {
+  color: #9ca3af !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
