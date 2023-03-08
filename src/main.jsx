@@ -8,7 +8,7 @@ import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 // Bootstrap
-import './scss/styles.scss'
+import './scss/custom.scss'
 import * as bootstrap from 'bootstrap'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
