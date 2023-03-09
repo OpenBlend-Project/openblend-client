@@ -11,7 +11,7 @@ class FormulasService extends PrivateService {
   }
 
   // GET /api/formulas
-  getAllFormulas = () => {
+  getUserFormulas = () => {
     return this.api.get('/api/formulas');
   }
 

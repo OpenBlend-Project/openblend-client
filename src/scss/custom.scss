@@ -1,7 +1,21 @@
 @import "~bootstrap/scss/bootstrap";
 
+h3, h4, h5 {
+  letter-spacing: 0.9px;
+}
+
 .text-muted {
   color: #9ca3af !important;
+}
+
+.card-hover {
+  transform: scale(1);
+  transition: transform 0.15s ease-out;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+  transition: transform 0.15s ease-out;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
