@@ -3,6 +3,16 @@ import FormulaHeaderCard from './FormulaHeaderCard'
 
 const FormulaHeader = ({ data }) => {
 
+  if (!data) {
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className='row row-cols-1 row-cols-lg-4 mt-4'>
       <div className="col">
