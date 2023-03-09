@@ -58,7 +58,7 @@ const MaterialsSearchBar = (props) => {
               {autocomplete.map(item => {
                 return (
                   <li key={item._id} className="list-group-item list-group-item-action" onClick={() => handleSelect(item._id)}>
-                    <h6 className='mb-0'>{item.name.common} <span class="text-muted fst-italic fw-normal">{item.name.botanical && item.name.botanical}</span></h6>
+                    <h6 className='mb-0'>{item.name.common} <span className="text-muted fst-italic fw-normal">{item.name.botanical && item.name.botanical}</span></h6>
                     <small>{item.identifier.cas}</small>
                   </li>
                 )

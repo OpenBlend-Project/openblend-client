@@ -9,7 +9,7 @@ const FormulaTable = ({ data, reloadFormula }) => {
   const [totalWeight, setTotalWeight] = useState(data.ingredients.reduce((acc, val) => acc + val.amount.grams, 0));
 
   const updateTotalWeight = (diff) => {
-    setTotalWeight(prev => prev +diff)
+    setTotalWeight(prev => prev + diff)
   }
 
   console.log(totalWeight);
