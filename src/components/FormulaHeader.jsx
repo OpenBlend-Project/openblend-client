@@ -2,6 +2,7 @@ import React from 'react'
 import FormulaHeaderCard from './FormulaHeaderCard'
 
 const FormulaHeader = ({ data }) => {
+  console.log(data);
 
   if (!data) {
     return (
