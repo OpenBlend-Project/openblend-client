@@ -54,13 +54,15 @@ const MaterialsSearchBar = (props) => {
           <input type="search" className="form-control form-control-lg shadow-sm border border-0" id="search" placeholder="Search material... " onChange={(e) => setSearchTerm(e.target.value)} />
           {autocomplete.length > 0 && (
             <ul className="list-group position-absolute w-100 mt-1 shadow-sm z-3">
-              {autocomplete.map(item => {
-                return (
-                  <li key={item._id} className="list-group-item list-group-item-action" onClick={() => handleSelect(item._id)}>
-                    <h6 className='mb-0'>{item.name.common} <span className="text-muted fst-italic fw-normal">{item.name.botanical && item.name.botanical}</span></h6>
-                    <small>{item.identifier.cas}</small>
-                  </li>
-                )
+              {autocomplete.map((item, index) => {
+                if (index < 10) {
+                  return (
+                    <li key={item._id} className="list-group-item list-group-item-action" onClick={() => handleSelect(item._id)}>
+                      <h6 className='mb-0'>{item.name.common} <span className="text-muted fst-italic fw-normal">{item.name.botanical && item.name.botanical}</span></h6>
+                      <small>{item.identifier.cas}</small>
+                    </li>
+                  )
+                }
               })}
             </ul>
           )}
