@@ -30,7 +30,7 @@ const CollectionCard = ({ data }) => {
               </div>
             </div>
             <p><span className="badge text-bg-secondary"></span></p>
-            <p className="text-muted" style={{ fontSize: "14px" }}></p>
+            <p className="text-muted" style={{ fontSize: "14px" }}>{data.description}</p>
           </div>
           <div className="card-footer px-4 py-3">
             <p className="text-muted mb-0" style={{ fontSize: "12px" }}>{getTimeAgo(data.createdAt)}</p>
