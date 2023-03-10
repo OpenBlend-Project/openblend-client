@@ -23,7 +23,8 @@ const FormulaHeader = ({ data }) => {
         <FormulaHeaderCard descriptor={"Concentration"} data={`${(data.concentration * 100).toFixed(2)} %`}/>
       </div>
       <div className="col">
-        <FormulaHeaderCard descriptor={"Used Raw Materials"} data={data.ingredients.length}/>
+        
+        <FormulaHeaderCard descriptor={"Used Raw Materials"} data={data.ingredients ? data.ingredients.length : 0}/>
       </div>
       <div className="col">
         <FormulaHeaderCard descriptor={"Stage"} data={data.stage}/>
