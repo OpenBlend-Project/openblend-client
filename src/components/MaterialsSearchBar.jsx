@@ -48,6 +48,16 @@ const MaterialsSearchBar = (props) => {
     setSearchTerm("");
   }
 
+  if (!autocomplete.length) {
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <form className='row mt-4 g-2' onSubmit={handleSubmit}>
       <div className="col-12">

@@ -23,7 +23,7 @@ const FormulasPage = ({ showDeleteFormula}) => {
       .catch(error => console.log(error));
   }, [])  
 
-  if (!formulas) {
+  if (!formulas.length) {
     return (
       <div className="d-flex justify-content-center">
         <div className="spinner-border" role="status">
