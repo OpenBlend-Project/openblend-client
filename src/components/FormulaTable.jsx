@@ -30,7 +30,7 @@ const FormulaTable = ({ data, reloadFormula }) => {
           </tr>
         </thead>
         <tbody>
-          {data && data.ingredients
+          {data.ingredients && data.ingredients
             .sort((next, current) => parseFloat(current.amount.grams) - parseFloat(next.amount.grams))
             .map((ingredient, index, array) => {
             return (
