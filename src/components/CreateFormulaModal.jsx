@@ -55,7 +55,6 @@ const CreateFormulaModal = ({ collection }) => {
   }
 
   const handleSubmit = (e) => { 
-    e.preventDefault();
     const requestBody = {
       name,
       version: "0.0.1",
