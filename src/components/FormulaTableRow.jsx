@@ -49,6 +49,16 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId, reloadFormula, t
       .catch(error => console.log(error))
   }
 
+  if (!ingredient) {
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <tr className="align-middle">
       <th scope="row" className="text-muted text-nowrap">{index + 1}</th>
