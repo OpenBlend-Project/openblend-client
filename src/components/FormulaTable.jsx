@@ -30,22 +30,30 @@ const FormulaTable = ({ data, reloadFormula }) => {
           </tr>
         </thead>
         <tbody>
-          {data.ingredients && data.ingredients
+        {data.ingredients ?
+          data.ingredients
             .sort((next, current) => parseFloat(current.amount.grams) - parseFloat(next.amount.grams))
             .map((ingredient, index, array) => {
-            return (
-              <FormulaTableRow
-                key={ingredient._id}
-                ingredient={ingredient}
-                index={index}
-                array={array}
-                formulaId={data._id}
-                reloadFormula={reloadFormula}
-                totalWeight={totalWeight}
-                updateTotalWeight={updateTotalWeight}
-              />
-            )
-          })}
+              return (
+                <FormulaTableRow
+                  key={ingredient._id}
+                  ingredient={ingredient}
+                  index={index}
+                  array={array}
+                  formulaId={data._id}
+                  reloadFormula={reloadFormula}
+                  totalWeight={totalWeight}
+                  updateTotalWeight={updateTotalWeight}
+                />
+              )
+            })
+          :
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        }
         </tbody>
         <tfoot>
           <FormulaFooterRow totalWeight={totalWeight}/>
