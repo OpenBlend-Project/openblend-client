@@ -9,7 +9,7 @@ const FormulaFooterRow = ({ totalWeight }) => {
       <td></td>
       <td></td>
       <td></td>
-      <td className="text-end text-muted">{totalWeight && totalWeight} g</td>
+      <td className="text-end text-muted">{totalWeight && totalWeight.toFixed()} g</td>
       <td></td>
     </tr>
   )
