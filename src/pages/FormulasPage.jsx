@@ -8,6 +8,8 @@ import formulasService from '../../services/formulas.service';
 import FormulaCard from '../components/FormulaCard';
 import CreateFormulaModal from '../components/CreateFormulaModal';
 import EditFormulaModal from '../components/EditFormulaModal';
+import PlaceholderCard from '../components/PlaceholderCard';
+import AddFormulaCard from '../components/AddFormulaCard';
 
 
 const FormulasPage = ({ showDeleteFormula}) => {
@@ -23,12 +25,31 @@ const FormulasPage = ({ showDeleteFormula}) => {
       .catch(error => console.log(error));
   }, [])  
 
-  if (!formulas.length) {
+
+  if (formulas.length < 1) {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
+      <div className='row w-100'>
+        <div className='col'></div>
+        <div className='col-12 col-sm-10 my-5 position-relative'>
+          <h2 className="fw-bold">My formulas</h2>  
+          <h5 className="text-muted opacity-50 fw-normal">Browse and manage your formulas</h5>
+          
+          <div className="container-fluid p-0 my-5">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+              <div className="col">
+                <AddFormulaCard />
+              </div>
+              <div className="col">
+                <PlaceholderCard />
+              </div>
+              <div className="col">
+                <PlaceholderCard />
+              </div>
+            </div>
+          </div>
         </div>
+        <div className='col'></div>
+        <CreateFormulaModal />
       </div>
     )
   }
