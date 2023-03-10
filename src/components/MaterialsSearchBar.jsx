@@ -16,7 +16,6 @@ const MaterialsSearchBar = (props) => {
       console.log(searchTerm);
       materialsService.searchRawMaterial(searchTerm, true)
         .then(response => {
-          console.log(response.data.slice[0, 9]);
           setAutocomplete(response.data.slice[0, 9]);
         })
     }
@@ -30,7 +29,6 @@ const MaterialsSearchBar = (props) => {
 
     materialsService.searchRawMaterial(searchTerm, false)
       .then(response => {
-        console.log(response);
         setSearchTerm("");
       })
   }
@@ -48,22 +46,12 @@ const MaterialsSearchBar = (props) => {
     setSearchTerm("");
   }
 
-  if (!autocomplete.length) {
-    return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <form className='row mt-4 g-2' onSubmit={handleSubmit}>
       <div className="col-12">
         <div className="position-relative">
           <input type="search" className="form-control form-control-lg shadow-sm border border-0" id="search" placeholder="Search material... " onChange={(e) => setSearchTerm(e.target.value)} />
-          {autocomplete.length > 0 && (
+          {autocomplete.length && (
             <ul className="list-group position-absolute w-100 mt-1 shadow-sm z-3">
               {autocomplete.map(item => {
                 return (
