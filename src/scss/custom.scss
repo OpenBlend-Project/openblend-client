@@ -1,8 +1,38 @@
 @import "~bootstrap/scss/bootstrap";
 
-h3, h4, h5 {
-  letter-spacing: 0.9px;
+@media (min-width: 576px) {
+  .w-sm-auto {
+    width: auto !important;
+  }
 }
+
+h1 {
+  /* Extra small devices (phones, less than 768px) */
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+}
+
+// h3, h4, h5 {
+//   letter-spacing: 0.9px;
+// }
 
 .text-muted {
   color: #9ca3af !important;

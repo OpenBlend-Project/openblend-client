@@ -70,7 +70,7 @@ const FormulaTableRow = ({ ingredient, index, array, formulaId, reloadFormula, t
         <span>{(ingredient.dilution && ingredient.dilution.concentration < 1 && ingredient.dilution.solvent) && ingredient.dilution.solvent.name.common}</span>
       </td>
       <td className="text-end text-nowrap">
-        <span>{percent && percent.toFixed(2)} <span style={{ color: "#cbd5e1" }}>%</span></span>
+        <span>{(percent && percent !== "NaN") ? percent.toFixed(2) : "0.00"} <span style={{ color: "#cbd5e1" }}>%</span></span>
       </td>
       <td className="text-end text-nowrap">
         <input type="number" inputMode="numeric" className="form-control form-control-sm text-end ms-auto" id="exampleFormControlInput1" value={grams} onChange={handleGramsChange} onBlur={handleGramsEdit} style={{ width: "64px"}}/>

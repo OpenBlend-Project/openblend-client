@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid ps-3 pe-1 px-sm-5 py-2 py-sm-3">
-        <Link to={"/"} className="navbar-brand align-items-center">
+        <Link to={"/formulas"} className="navbar-brand align-items-center">
           <h6 className="my-auto">
             <img src={logo} alt="OpenBlend" style={{ "maxHeight": "24px" }} />
             <span className="badge ms-3 pb-1 text-bg-warning d-none d-sm-inline">private alpha</span>
@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-md-auto mb-2 mb-lg-0" style={{ fontSize: "14px", letterSpacing: "0.4px" }}>
             <li className="nav-item">
-              <NavLink className="nav-link" to={"/"}>Dashboard</NavLink>
+              <NavLink className="nav-link" to={"/formulas"}>Home</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={"/formulas"}>My Formulas</NavLink>

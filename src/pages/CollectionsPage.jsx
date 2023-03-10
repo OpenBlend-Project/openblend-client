@@ -22,11 +22,20 @@ const CollectionsPage = () => {
 
 
   return (
-    <div className='row'>
+    <div className='row w-100'>
       <div className='col'></div>
       <div className='col-12 col-sm-10 my-5 position-relative'>
+        <div className="d-flex">
+          <div>
+            <h2 className="fw-bold">My Collections</h2>
+          </div>
+          <div className="ms-auto">
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCollectionModal">
+              Create new collection
+            </button>
+          </div>
+        </div>
 
-        <h2 className="fw-bold">My Collections</h2>
         <h5 className="text-muted opacity-50 fw-normal">Browse and manage your collections</h5>
         
         <div className="container-fluid p-0 my-5">
@@ -34,11 +43,6 @@ const CollectionsPage = () => {
             {collections && collections.map(collection => <CollectionCard key={collection._id} data={collection}/>)}
           </div>
         </div>
-
-
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCollectionModal">
-          Create new collection
-        </button>
 
         <CreateCollectionModal />
       </div>

@@ -28,7 +28,7 @@ const NavbarAnon = () => {
               <NavLink className="nav-link" to={"/formulas"}>About</NavLink>
             </li>
             <li className="nav-item">
-              <Link to={"/signup"} className="btn btn-primary ms-4">Join now</Link>
+              <Link to={"/signup"} className="btn btn-primary mt-2 mt-lg-0 ms-0 ms-lg-4">Join now</Link>
             </li>
           </ul>
         </div>

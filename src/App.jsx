@@ -23,14 +23,18 @@ import IsAnon from './hoc/IsAnon'
 // Contexts
 import { AuthContext } from '../context/auth.context'
 
+// Icons
+import FeatherIcon from 'feather-icons-react'
+
+
 function App() {
   const { isSignedIn } = useContext(AuthContext);
 
   return (
-    <div className="App container-fluid bg-light" style={{ "minHeight": "100vh"}}>
+    <div className="App container-fluid bg-light d-flex flex-column" style={{ "minHeight": "100vh"}}>
       {isSignedIn ? <NavbarPrivate /> : <NavbarAnon />}
       
-      <div className="countainer-fluid px-3 px-sm-5">
+      <div className="countainer-fluid px-3 px-sm-5 flex-grow-1 d-flex flex-column align-items-center">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<IsAnon><SignUpPage /></IsAnon>} />
@@ -40,6 +44,10 @@ function App() {
           <Route path="/formulas" element={<IsPrivate><FormulasPage showDeleteFormula/></IsPrivate>} />
           <Route path="/formulas/:formulaId" element={<IsPrivate><FormulaDetailsPage /></IsPrivate>} />
         </Routes>
+      </div>
+
+      <div className="alert alert-warning p-2 align-items-center align-middle text-center w-100">
+        <p className="m-0"><FeatherIcon icon="alert-triangle" size="18" className="me-2 mb-1"/>OpenBlend is currently not intended for actual use. Please don't enter any confidential information.</p>
       </div>
     </div>
   )

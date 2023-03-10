@@ -53,7 +53,7 @@ const CollectionDetailsPage = ({ showDeleteFromCollection })=> {
 
   if (collection.formulas.length < 1) {
     return (
-      <div className='row'>
+      <div className='row w-100'>
         <div className='col'></div>
         <div className='col-12 col-sm-10 my-5 position-relative'>
           <h2 className="fw-bold">{collection.name}</h2>  
@@ -80,9 +80,10 @@ const CollectionDetailsPage = ({ showDeleteFromCollection })=> {
   }
 
   return (
-    <div className='row'>
+    <div className='row w-100'>
       <div className='col'></div>
       <div className='col-12 col-sm-10 my-5 position-relative'>
+      
         <h2 className="fw-bold">{collection.name}</h2>  
         <h5 className="text-muted opacity-50 fw-normal">{collection.description}</h5>
         

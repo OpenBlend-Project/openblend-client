@@ -44,7 +44,7 @@ const FormulaPage = () => {
   }
 
   return (
-    <div className='row'>
+    <div className='row w-100'>
       <div className='col'></div>
       <div className='col-12 col-sm-10 my-5 position-relative'>
         <div className="d-flex">
@@ -52,8 +52,11 @@ const FormulaPage = () => {
             <h2 className="fw-bold">{data.name} <span className="text-muted opacity-50 fs-5">{data.version}</span></h2>
           </div>
           <div className="ms-auto">
-            <button type="button" className="btn btn-sm btn-outline-secondary">
-              <FeatherIcon icon="folder-plus" size={18}/>
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFormulaModal">
+              Edit formula
+            </button>
+            <button type="button" className="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#addFormulaToCollectionModal">
+              Add to collection
             </button>
           </div>
         </div>
@@ -66,12 +69,6 @@ const FormulaPage = () => {
 
         <AddFormulaToCollectionModal formulaId={formulaId} />
         <EditFormulaModal data={data} />
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFormulaToCollectionModal">
-          Add to collection
-        </button>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFormulaModal">
-          Edit formula
-        </button>
       </div>
       <div className='col'></div>
     </div>

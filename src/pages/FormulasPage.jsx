@@ -34,13 +34,20 @@ const FormulasPage = ({ showDeleteFormula}) => {
   }
 
   return (
-    <div className='row'>
+    <div className='row w-100'>
       <div className='col'></div>
       <div className='col-12 col-sm-10 my-5 position-relative'>
-
-        <h2 className="fw-bold">My Formulas</h2>
+        <div className="d-flex">
+          <div>
+            <h2 className="fw-bold">My Formulas</h2>
+          </div>
+          <div className="ms-auto">
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createFormulaModal">
+              Create new formula
+            </button>
+          </div>
+        </div>
         <h5 className="text-muted opacity-50 fw-normal">Browse and manage your formulas</h5>
-        
         <div className="container-fluid p-0 my-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
             {formulas.map(formula => <FormulaCard key={formula._id} data={formula} setSelectedFormula={setSelectedFormula} showDeleteFormula  />)}
@@ -48,9 +55,6 @@ const FormulasPage = ({ showDeleteFormula}) => {
         </div>
 
 
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createFormulaModal">
-          Create new formula
-        </button>
 
         <CreateFormulaModal />
         {selectedFormula && <EditFormulaModal data={selectedFormula} />}

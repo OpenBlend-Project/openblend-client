@@ -31,7 +31,7 @@ const SignInForm = () => {
       .then((response) => {
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate("/formulas");
       })
       .catch((error) => {
         const errorDescription = error.response.data.description;
@@ -69,6 +69,10 @@ const SignInForm = () => {
       </div>
 
       {errorMessage && <div className="alert alert-danger" role="alert" >{errorMessage}</div>}
+
+      <div className="alert alert-primary mt-5" role="alert">
+        By signing up you agree to OpenBlend's <a href="/terms">Terms and Conditions</a>
+      </div>
 
       <p>Don't have an account yet? <span><Link to="/signup">Sign up</Link></span></p>
     </form>
