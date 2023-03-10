@@ -16,7 +16,8 @@ const MaterialsSearchBar = (props) => {
       console.log(searchTerm);
       materialsService.searchRawMaterial(searchTerm, true)
         .then(response => {
-          setAutocomplete(response.data.slice[0, 9]);
+          const limitedData = response.data.slice[0, 9]
+          setAutocomplete(limitedData);
         })
     }
     else {
