@@ -52,7 +52,7 @@ const MaterialsSearchBar = (props) => {
       <div className="col-12">
         <div className="position-relative">
           <input type="search" className="form-control form-control-lg shadow-sm border border-0" id="search" placeholder="Search material... " onChange={(e) => setSearchTerm(e.target.value)} />
-          {autocomplete.length && (
+          {autocomplete.length > 0 && (
             <ul className="list-group position-absolute w-100 mt-1 shadow-sm z-3">
               {autocomplete.map(item => {
                 return (
