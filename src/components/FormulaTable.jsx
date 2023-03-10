@@ -6,7 +6,7 @@ import FormulaFooterRow from './FormulaFooterRow';
 import FormulaTableRow from './FormulaTableRow';
 
 const FormulaTable = ({ data, reloadFormula }) => {
-  const [totalWeight, setTotalWeight] = useState(data.ingredients.reduce((acc, val) => acc + val.amount.grams, 0));
+  const [totalWeight, setTotalWeight] = useState(data.ingredients ? data.ingredients.reduce((acc, val) => acc + val.amount.grams, 0) : 0);
 
   const updateTotalWeight = (diff) => {
     setTotalWeight(prev => prev + diff)
